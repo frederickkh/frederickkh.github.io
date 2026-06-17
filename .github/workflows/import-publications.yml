@@ -6,6 +6,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 # Run workflow when a `.bib` file is added or updated in the `data/` folder
 on:
   push:
