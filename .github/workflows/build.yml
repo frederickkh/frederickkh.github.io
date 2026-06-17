@@ -4,6 +4,7 @@ env:
   NODE_VERSION: '22'
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
+
 on:
   # Standalone trigger for PR validation
   pull_request:
