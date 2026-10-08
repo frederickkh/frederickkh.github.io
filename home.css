@@ -1,0 +1,74 @@
+/* v47 page-specific: home */
+/* ============================================================ evidence-led editorial hierarchy ============================================================ */
+body[data-page="home"] .hero-grid{padding-bottom:clamp(42px,6vw,78px)}
+body[data-page="home"] .hero-identity-line{margin-top:24px}
+body[data-page="home"] .academic-timeline-section{border-top:1px solid var(--line);margin-top:10px}
+
+.home-featured-research{padding:clamp(46px,7vw,88px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.home-featured-head{display:flex;justify-content:space-between;gap:32px;align-items:flex-end;margin-bottom:28px}
+.home-featured-head h2{margin:.35rem 0 0;max-width:15ch;font-size:clamp(2.2rem,4vw,4rem);line-height:.98;letter-spacing:-.035em}
+.text-arrow-link{font-family:var(--ui-font);font-size:.82rem;letter-spacing:.02em;text-decoration:none;color:var(--muted);padding-bottom:5px;border-bottom:1px solid var(--line);transition:color .18s ease,border-color .18s ease,transform .18s ease;white-space:nowrap}
+.text-arrow-link:hover{color:var(--text);border-color:var(--text);transform:translateX(3px)}
+.home-featured-layout{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(320px,.84fr);gap:clamp(28px,5vw,64px);align-items:center}
+.home-featured-visual{margin:0;min-width:0}
+.home-featured-visual img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);background:var(--surface)}
+.home-featured-visual figcaption{margin-top:9px;font-family:var(--ui-font);font-size:.72rem;letter-spacing:.04em;color:var(--muted)}
+.home-featured-copy>p:first-child{font-size:1.08rem;line-height:1.65;color:var(--muted);margin:0 0 26px}
+.home-featured-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:26px}
+.home-featured-results>div{padding:18px 15px 18px 0;min-width:0}
+.home-featured-results>div+div{padding-left:15px;border-left:1px solid var(--line)}
+.home-featured-results span{display:block;font-family:var(--ui-font);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.home-featured-results strong{display:block;font-weight:500;font-size:clamp(1.3rem,2.3vw,2rem);line-height:1}
+.home-featured-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.evidence-note{margin:14px 0 0!important;font-family:var(--ui-font);font-size:.73rem!important;line-height:1.45!important;color:var(--muted)!important}
+
+
+/* Main companion: continuous gentle flight + pointer parallax */
+.hero-side{min-height:540px;display:grid;align-items:center;overflow:visible}
+.avatar-wrap{isolation:isolate}
+.avatar-interaction-hint{font-family:var(--ui-font);font-size:.76rem;letter-spacing:.035em;color:var(--muted);opacity:.78;margin-top:3px}
+.avatar-btn.avatar-float{animation:avatarFlight 8.5s ease-in-out infinite;will-change:transform;filter:drop-shadow(0 18px 28px rgba(0,0,0,.06))}
+.avatar-btn .research-companion{transform:translate3d(var(--avatar-parallax-x,0px),calc(var(--avatar-parallax-y,0px) + var(--avatar-scroll-y,0px)),0) rotate(var(--avatar-tilt,0deg));transform-origin:center;transition:transform .18s cubic-bezier(.2,.8,.2,1),filter .2s ease;will-change:transform}
+.avatar-btn:hover .research-companion{filter:drop-shadow(0 14px 16px rgba(0,0,0,.10))}
+.avatar-btn.avatar-boost .research-companion{animation:avatarBoost .72s cubic-bezier(.2,.8,.2,1)}
+.avatar-btn .companion-wing-left{transform-box:fill-box;transform-origin:right center;animation:wingLeft 4.6s ease-in-out infinite}
+.avatar-btn .companion-wing-right{transform-box:fill-box;transform-origin:left center;animation:wingRight 4.6s ease-in-out infinite}
+.avatar-btn .companion-float-dot-a{animation:floatDotA 3.8s ease-in-out infinite}
+.avatar-btn .companion-float-dot-b{animation:floatDotB 4.4s ease-in-out infinite .3s}
+.avatar-btn .companion-thought{animation:thoughtDrift 5.4s ease-in-out infinite}
+@keyframes avatarFlight{0%,100%{transform:translate3d(0,4px,0) rotate(-.5deg)}22%{transform:translate3d(10px,-10px,0) rotate(.7deg)}48%{transform:translate3d(-4px,-18px,0) rotate(-.25deg)}72%{transform:translate3d(-12px,-7px,0) rotate(.55deg)}}
+@keyframes avatarBoost{0%{transform:scale(1) translateY(0)}35%{transform:scale(1.045) translateY(-11px) rotate(1.5deg)}70%{transform:scale(.99) translateY(3px) rotate(-.5deg)}100%{transform:scale(1) translateY(0)}}
+@keyframes wingLeft{0%,100%{transform:rotate(0)}50%{transform:rotate(-3deg)}}
+@keyframes wingRight{0%,100%{transform:rotate(0)}50%{transform:rotate(3deg)}}
+@keyframes floatDotA{0%,100%{transform:translate(0,0);opacity:.72}50%{transform:translate(-7px,-12px);opacity:.38}}
+@keyframes floatDotB{0%,100%{transform:translate(0,0);opacity:.55}50%{transform:translate(8px,-10px);opacity:.28}}
+@keyframes thoughtDrift{0%,100%{transform:translate(0,0);opacity:.65}50%{transform:translate(5px,-7px);opacity:1}}
+
+
+/* Home timeline only previews the latest steps */
+.home-featured-research+.academic-timeline-section .academic-timeline{margin-bottom:18px}
+.home-featured-research+.academic-timeline-section .section-head{align-items:end}
+
+
+
+/* v48 visual balance tweaks */
+.home-featured-head h2{max-width:13ch;font-size:clamp(2rem,3.5vw,3.4rem)}
+.home-featured-layout{grid-template-columns:minmax(0,.94fr) minmax(360px,1.06fr);align-items:start}
+.home-featured-visual{max-width:520px;justify-self:start}
+.home-featured-visual img{width:100%;aspect-ratio:auto;max-height:540px;object-fit:contain;background:#fff;padding:10px}
+@media(max-width:1100px){.home-featured-visual{max-width:470px}}
+@media(max-width:900px){.home-featured-layout{grid-template-columns:1fr}.home-featured-visual{max-width:560px}}
+
+
+/* v49 stronger home balance fix */
+.home-featured-layout{grid-template-columns:minmax(280px,.78fr) minmax(420px,1.22fr);gap:clamp(24px,4vw,52px);align-items:center}
+.home-featured-visual{max-width:430px;justify-self:center;width:100%}
+.home-featured-visual img{max-height:430px;padding:12px 12px 10px;border-radius:0;box-shadow:none}
+.home-featured-copy{max-width:520px}
+@media(max-width:1100px){.home-featured-layout{grid-template-columns:minmax(250px,.82fr) minmax(360px,1.18fr)}.home-featured-visual{max-width:390px}.home-featured-visual img{max-height:390px}}
+@media(max-width:900px){.home-featured-layout{grid-template-columns:1fr;align-items:start}.home-featured-visual{max-width:480px;justify-self:start}.home-featured-visual img{max-height:none}}
+
+
+/* v51 — stable first paint: avoid compositor ghosting seen in the supplied screen recording. */
+body[data-page="home"] .home-hero{opacity:1!important;transform:none!important;transition:none!important}
+body[data-page="home"].page-enter .home-hero :is(h1,.kicker,.hero-copy>p,.hero-identity-line,.hero-actions,.avatar-bubble,.avatar-options){animation:none!important}

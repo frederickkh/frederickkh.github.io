@@ -1,0 +1,15 @@
+window.FK_SITE_CONFIG={
+  productionBaseUrl:'https://timothy1016.github.io/Frederick-Khasanto/',
+  buildDate:'2026-09-29',
+  scholarUrl:'',
+  orcidUrl:'',
+  analytics:null,
+  projectLinks:{
+    xray:{code:'',demo:''},
+    llmsafety:{code:'',demo:''},
+    optimization:{code:'',demo:''},
+    rag:{code:'',demo:''},
+    knowyourbody:{code:'',demo:''},
+    smartbot:{code:'',demo:''}
+  }
+};

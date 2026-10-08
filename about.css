@@ -1,0 +1,183 @@
+/* v47 page-specific: about */
+/* About photo story: one main portrait + one smaller personal frame. */
+.about-page .about-intro-ref{grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);gap:clamp(40px,6vw,78px);align-items:start}
+.about-photo-stack{
+  position:sticky;
+  top:96px;
+  width:min(100%,360px);
+  justify-self:end;
+  min-width:0;
+  position:sticky;
+  padding-bottom:110px;
+}
+.about-photo-stack figure{margin:0}
+.about-photo-primary{
+  width:100%!important;
+  position:relative!important;
+  top:auto!important;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--text) 14%,var(--line));
+  border-radius:16px!important;
+  background:var(--surface-soft);
+  box-shadow:0 22px 55px rgba(23,20,17,.12)!important;
+}
+.about-photo-primary .about-photo-ref{width:100%;height:auto;aspect-ratio:3/4!important;display:block;object-fit:cover;object-position:center 42%;filter:none!important}
+.about-photo-secondary-wrap{
+  width:min(54%,190px);
+  position:absolute;
+  right:0;
+  bottom:0;
+  z-index:2;
+  margin:0!important;
+  padding:7px;
+  border:1px solid color-mix(in srgb,var(--text) 14%,var(--line));
+  border-radius:14px;
+  background:var(--surface);
+  box-shadow:0 18px 38px rgba(23,20,17,.12);
+  transform:rotate(1.2deg);
+}
+.about-photo-secondary{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 28%;border-radius:9px;filter:none!important}
+.about-photo-secondary-wrap figcaption{
+  padding:8px 5px 2px;
+  color:var(--muted);
+  font-family:var(--ui-font);
+  font-size:.7rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+html[data-theme="dark"] .about-photo-primary,html[data-theme="dark"] .about-photo-secondary-wrap{box-shadow:none!important}
+
+
+/* About: less repetition, stronger recognition hierarchy */
+.about-focus-band{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);margin:20px 0 72px}
+.about-focus-band>div{padding:24px 28px 26px 0;border-right:1px solid var(--line)}
+.about-focus-band>div+div{padding-left:28px}
+.about-focus-band>div:last-child{border-right:0}
+.about-focus-band span,.skill-groups span{font:600 .72rem/1 var(--ui-font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.about-focus-band strong{display:block;font-size:1.25rem;margin:9px 0 8px}
+.about-focus-band p{margin:0;color:var(--muted);line-height:1.55}
+.about-finish-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(34px,7vw,92px);padding:72px 0 32px;border-top:1px solid var(--line)}
+.about-finish-grid h2{margin:6px 0 24px;font-size:clamp(1.9rem,3.4vw,3.1rem)}
+.skill-groups{display:grid;gap:0;border-top:1px solid var(--line)}
+.skill-groups>div{padding:17px 0;border-bottom:1px solid var(--line)}
+.skill-groups p{margin:7px 0 0;font-size:1.03rem}
+.recognition-list{border-top:1px solid var(--line)}
+.recognition-list>div{display:grid;grid-template-columns:112px 1fr;gap:22px;padding:15px 0;border-bottom:1px solid var(--line)}
+.recognition-list time{font:600 .78rem/1.5 var(--ui-font);color:var(--muted);letter-spacing:.03em}
+.recognition-list p{margin:0}.recognition-list strong{display:block;font-size:1rem}.recognition-list span{display:block;color:var(--muted);margin-top:3px}
+
+
+/* Academic timeline segmented filter */
+.timeline-filter-bar{
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  width:max-content;
+  max-width:100%;
+  margin:8px 0 22px;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:color-mix(in srgb,var(--surface-soft) 82%,transparent);
+  box-shadow:none;
+  overflow-x:auto;
+}
+.timeline-filter{
+  min-height:38px!important;
+  padding:8px 14px!important;
+  border:0!important;
+  border-radius:10px!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:var(--muted)!important;
+  font-family:var(--ui-font)!important;
+  font-size:.78rem!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+  transform:none!important;
+}
+.timeline-filter:hover{
+  color:var(--text)!important;
+  background:color-mix(in srgb,var(--surface) 72%,transparent)!important;
+  transform:none!important;
+}
+.timeline-filter.active{
+  color:var(--bg)!important;
+  background:var(--text)!important;
+  border:0!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+.timeline-filter:focus-visible{
+  outline:2px solid color-mix(in srgb,var(--accent) 72%,var(--text));
+  outline-offset:2px;
+}
+html[data-theme="dark"] .timeline-filter.active{
+  color:var(--bg)!important;
+  background:var(--text)!important;
+}
+@media(max-width:640px){
+  .timeline-filter-bar{display:flex;width:100%;padding:4px;gap:2px;margin-inline:0}
+  .timeline-filter{flex:0 0 auto;min-height:36px!important;padding:7px 12px!important;font-size:.75rem!important}
+}
+
+
+/* About: clean up the renamed final layout. */
+.about-container{display:grid;gap:26px}
+.about-timeline{padding-top:var(--space-8)!important}
+
+
+/* Mobile overflow guard for the secondary portrait. */
+@media(max-width:560px){
+  .about-photo-secondary-wrap{transform:none!important;max-width:100%}
+}
+
+/* Keep the photo composition bounded after page-specific CSS moved after core. */
+.about-photo-secondary-wrap{box-sizing:border-box;min-width:0;overflow:hidden}
+.about-photo-secondary{max-width:100%;min-width:0}
+@media(max-width:900px){
+  .about-photo-secondary-wrap{right:0}
+}
+@media(max-width:720px){
+  .about-page .about-intro-ref{grid-template-columns:1fr!important}
+  .about-photo-stack{position:relative;top:auto;width:min(92vw,430px);justify-self:start;margin-top:6px;padding-bottom:0;display:grid;gap:12px}
+  .about-photo-secondary-wrap{position:relative;right:auto;bottom:auto;z-index:auto;width:58%;margin-top:-46px!important;margin-right:0!important}
+}
+@media(max-width:560px){
+  .about-photo-stack{width:100%;max-width:430px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:start}
+  .about-photo-primary,.about-photo-secondary-wrap{margin:0!important;position:relative;right:auto;bottom:auto;width:auto;transform:none!important}
+  .about-photo-ref,.about-photo-secondary{width:100%!important;height:auto!important;aspect-ratio:3/4;object-fit:cover}
+}
+
+
+/* v48 about photo composition fix */
+.about-page .about-intro-ref{grid-template-columns:minmax(0,1.42fr) minmax(240px,.58fr);gap:clamp(32px,5vw,60px)}
+.about-photo-stack{width:min(100%,312px);padding-bottom:72px}
+.about-photo-secondary-wrap{width:min(46%,152px);right:-10px;bottom:20px;transform:rotate(1deg)}
+.about-photo-secondary{object-position:center 24%}
+@media(max-width:1100px){.about-photo-stack{width:min(100%,290px)}.about-photo-secondary-wrap{right:-6px}}
+@media(max-width:900px){.about-page .about-intro-ref{grid-template-columns:minmax(0,1fr) 280px;gap:28px}.about-photo-stack{width:min(100%,280px);padding-bottom:56px}.about-photo-secondary-wrap{width:min(48%,142px);right:0;bottom:14px}}
+@media(max-width:720px){.about-photo-stack{width:min(92vw,430px);padding-bottom:0;display:grid;gap:12px}.about-photo-secondary-wrap{position:relative;right:auto;bottom:auto;z-index:auto;width:58%;margin-top:-46px!important;margin-right:0!important;transform:none!important}}
+@media(max-width:560px){.about-photo-stack{grid-template-columns:1fr 1fr!important;gap:10px!important;align-items:start}.about-photo-primary,.about-photo-secondary-wrap{margin:0!important;position:relative;right:auto;bottom:auto;width:auto;transform:none!important}.about-photo-ref,.about-photo-secondary{width:100%!important;height:auto!important;aspect-ratio:3/4;object-fit:cover}}
+
+
+/* v49 simpler about photo composition fix */
+.about-page .about-intro-ref{grid-template-columns:minmax(0,1.48fr) minmax(220px,.52fr);gap:clamp(28px,4.5vw,52px)}
+.about-photo-stack{width:min(100%,272px);padding-bottom:0;display:grid;gap:14px;justify-self:end;align-items:start}
+.about-photo-primary{z-index:1}
+.about-photo-secondary-wrap{position:relative;width:68%;justify-self:end;right:auto;bottom:auto;z-index:2;margin-top:-44px!important;transform:rotate(.8deg);padding:6px}
+.about-photo-secondary{object-position:center 20%}
+@media(max-width:1100px){.about-page .about-intro-ref{grid-template-columns:minmax(0,1.4fr) 250px}.about-photo-stack{width:min(100%,248px)}.about-photo-secondary-wrap{width:70%;margin-top:-38px!important}}
+@media(max-width:900px){.about-page .about-intro-ref{grid-template-columns:minmax(0,1fr) 235px;gap:24px}.about-photo-stack{width:min(100%,235px)}.about-photo-secondary-wrap{width:72%;margin-top:-34px!important}}
+@media(max-width:720px){.about-page .about-intro-ref{grid-template-columns:1fr!important}.about-photo-stack{width:min(92vw,430px);justify-self:start;gap:12px}.about-photo-secondary-wrap{position:relative;right:auto;bottom:auto;width:58%;margin-top:-46px!important;transform:none!important}}
+@media(max-width:560px){.about-photo-stack{grid-template-columns:1fr 1fr!important;gap:10px!important;align-items:start}.about-photo-primary,.about-photo-secondary-wrap{margin:0!important;position:relative;right:auto;bottom:auto;width:auto;transform:none!important}.about-photo-ref,.about-photo-secondary{width:100%!important;height:auto!important;aspect-ratio:3/4;object-fit:cover}}
+
+
+/* v50 make graduation photo a small square card */
+.about-photo-stack{overflow:visible}
+.about-photo-secondary-wrap{width:132px!important;max-width:42%!important;justify-self:end;align-self:start;margin-top:-36px!important;padding:6px!important;overflow:hidden!important}
+.about-photo-secondary{display:block;width:100%!important;aspect-ratio:1 / 1!important;height:auto!important;object-fit:cover!important;object-position:center 16%!important;border-radius:9px}
+@media(max-width:1100px){.about-photo-secondary-wrap{width:120px!important;max-width:44%!important;margin-top:-30px!important}}
+@media(max-width:900px){.about-photo-secondary-wrap{width:112px!important;max-width:46%!important;margin-top:-24px!important}}
+@media(max-width:720px){.about-photo-secondary-wrap{width:58%!important;max-width:none!important;margin-top:-46px!important}}
+@media(max-width:560px){.about-photo-secondary{aspect-ratio:1 / 1!important}}
