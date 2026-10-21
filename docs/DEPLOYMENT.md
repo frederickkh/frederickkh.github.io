@@ -16,11 +16,11 @@ python finalize_deployment.py https://your-real-domain.com \
   --orcid https://orcid.org/REAL-ORCID
 ```
 
-This updates canonical URLs, `og:url`, absolute social images, `robots.txt`, `sitemap.xml`, `site-config.js`, and the automatic build date shown by the portfolio.
+This updates canonical URLs, `og:url`, absolute social images, `robots.txt`, `sitemap.xml`, `assets/js/site-config.js`, and the automatic build date shown by the portfolio.
 
 ## 2. Add real Code / Demo URLs
 
-Edit `site-config.js` and fill only links that actually exist:
+Edit `assets/js/site-config.js` and fill only links that actually exist:
 
 ```js
 projectLinks:{
