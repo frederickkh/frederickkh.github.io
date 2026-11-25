@@ -497,8 +497,8 @@ footer a:hover {
   main { padding: 2.2rem 1.15rem 4rem; }
 
   .topbar { padding: 0.55rem 1.15rem 0.55rem; gap: 0.5rem 1rem; }
-  /* Hide the site name on mobile — "Home" + the page title carry it */
-  .topbar .site-name { display: none; }
+  /* Keep the name visible on mobile — shrink slightly so it fits beside the buttons */
+  .topbar .site-name { font-size: 0.85rem; }
   .topbar nav { gap: 0.45rem 0.85rem; font-size: 0.85rem; }
   #lang-toggle { height: 1.7rem; font-size: 0.75rem; padding: 0 0.6rem; }
   #theme-toggle, #menu-toggle { width: 1.7rem; height: 1.7rem; }
