@@ -16,17 +16,14 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# However, do NOT cancel in-progress runs as we want to allow the production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build job: package and upload the site artifact
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,6 +35,17 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+
+  # Deploy job: runs after build. Being a separate job, it starts well after the
+  # artifact becomes visible, avoiding the known "Found 0 artifact(s)" race
+  # (actions/deploy-pages#451).
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
